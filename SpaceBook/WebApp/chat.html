@@ -1,35 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Chat Interativo - SpaceBook</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header><h1>SpaceBook</h1></head>
+  <div class="container">
+    <header><h1>SpaceBook</h1></header>
+    
     <main>
-        <h2>Chat Interativo</h2>
-        <section id="chat-box"></section>
-      
+      <h2>Chat Interativo</h2>
+
+      <!-- Área de mensagens -->
+      <section id="chat-box" class="chat-box"></section>
+
+      <!-- Área de entrada de mensagem -->
+      <div class="input-area">
         <input type="text" id="chat-input" placeholder="Escreva aqui..." />
-        <button onclick="sendMessage()">Enviar</button>
-      </main>
-      
+        <button onclick="sendMessage()">Enviar</button> <button class="logout-button" onclick="logout()">Sair</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Script do chat -->
   <script>
     function sendMessage() {
       const input = document.getElementById('chat-input');
       const chat = document.getElementById('chat-box');
-      const msg = input.value;
+      const msg = input.value.trim();
+
       if (msg) {
-        chat.innerHTML += `<p><strong>Você:</strong> ${msg}</p>`;
+        // Adiciona mensagem do usuário
+        chat.innerHTML += `
+          <div class="user-message">
+            <div class="chat-message">Você: ${msg}</div>
+          </div>
+        `;
         input.value = "";
-        // Aqui você pode integrar com um backend ou IA
-        chat.innerHTML += `<p><strong>Bot:</strong> Em breve recomendarei algo incrível!</p>`;
+
+        // Adiciona resposta do bot
+        setTimeout(() => {
+          chat.innerHTML += `
+            <div class="bot-message">
+              <div class="chat-message">Bot: Em breve recomendarei algo incrível!</div>
+            </div>
+            
+          `;
+          chat.scrollTop = chat.scrollHeight;
+        }, 300);
       }
     }
+
+    
+  function logout() {
+    // Simula um logout (pode ser redirecionado para login.html)
+    window.location.href = "login.html"; // ajuste para o caminho correto da sua tela de login
+  }
   </script>
 </body>
 </html>

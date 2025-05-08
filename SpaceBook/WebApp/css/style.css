@@ -37,13 +37,12 @@ nav {
 }
 
 /* === LINKS DO NAV === */
-/* === LINK GERAL DO NAV === */
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
-    white-space: nowrap; /* evita quebra em nomes como "Chat Interativo" */
+    white-space: nowrap;
 }
 
 nav a:hover {
@@ -51,7 +50,6 @@ nav a:hover {
     color: #dcd0f3;
 }
 
-/* === CONTAINER DA NAVBAR === */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -60,22 +58,20 @@ nav a:hover {
     color: white;
     padding: 1rem 2rem;
     border-bottom: 3px solid #a678dd;
-    flex-wrap: wrap; /* torna o menu responsivo em telas menores */
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
-/* === LOGO (se houver) pode usar uma classe tipo .navbar-logo === */
 .navbar-logo {
     font-size: 1.8rem;
     font-family: 'Pacifico', cursive;
     margin-right: 2rem;
 }
 
-/* === BOTÕES DO MENU === */
 .nav-buttons {
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap; /* melhora em telas menores */
+    flex-wrap: wrap;
 }
 
 .nav-buttons a {
@@ -91,8 +87,6 @@ nav a:hover {
 .nav-buttons a:hover {
     background-color: #a678dd;
 }
-
-
 
 /* === CONTEÚDO PRINCIPAL === */
 main {
@@ -136,33 +130,30 @@ main {
     margin-bottom: 0.8rem;
 }
 
-
 /* === BARRA DE BUSCA === */
 .search-bar {
     display: flex;
-    flex-wrap: wrap; /* Quebra os itens para telas menores */
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-end; /* Alinha o botão na base */
+    align-items: flex-end;
     gap: 1.5rem;
     margin-top: 2rem;
     background-color: #fef7f0;
     padding: 2rem;
     border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* leve sombra para destaque */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Cada campo da barra de busca */
 .search-bar .field-group {
     display: flex;
     flex-direction: column;
     min-width: 220px;
-    flex: 1 1 220px; /* torna responsivo e consistente */
+    flex: 1 1 220px;
 }
 
-/* Label dos campos */
 .search-bar label {
     font-size: 0.9rem;
     color: #4b2e83;
@@ -170,7 +161,6 @@ main {
     font-weight: 600;
 }
 
-/* Inputs e select */
 .search-bar input,
 .search-bar select {
     padding: 0.7rem 1rem;
@@ -181,7 +171,6 @@ main {
     width: 100%;
 }
 
-/* Botão */
 .search-bar button {
     padding: 0.9rem 2rem;
     background-color: #a678dd;
@@ -198,7 +187,6 @@ main {
     background-color: #8f5dc3;
     transform: scale(1.03);
 }
-
 
 /* === LIVROS === */
 .book-container {
@@ -342,7 +330,80 @@ footer p {
 .form-footer a:hover {
     text-decoration: underline;
 }
+/* === ÁREA DO CHAT === */
+.chat-box {
+    background-color: #f5eaff;
+    border: 1px solid #e1d3f5;
+    border-radius: 50px;
+    height: 500px;
+    overflow-y: auto;
+    padding: 10px;
+    margin: 20px auto;  /* Centraliza horizontalmente */
+    width: 80%;          /* Ajuste a largura conforme necessário (ex: 60%, 500px etc.) */
+    max-width: 600px;    /* Impede que fique grande demais */
+}
+.chat-message {
+    max-width: 80%;
+    padding: 8px 12px;
+    border-radius: 16px;
+    margin: 6px 0;
+    display: inline-block;
+}
 
+.user-message {
+    text-align: right;
+    color: #333;
+    font-weight: bold;
+}
+
+.user-message .chat-message {
+    background-color: #d5b3ff;
+    margin-left: auto;
+}
+
+.bot-message {
+    text-align: left;
+    color: #555;
+}
+
+.bot-message .chat-message {
+    background-color: #ffffff;
+    margin-right: auto;
+}
+
+  .chat-box p {
+    margin: 8px 0;
+  }
+  
+  .input-area {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  #chat-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  button {
+    padding: 10px 16px;
+    background-color: #b077ea;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:hover {
+    background-color: #9c5bd8;
+  }
+  
 /* === PÁGINA INICIAL === */
 .home-header {
     background: #5c3d99;

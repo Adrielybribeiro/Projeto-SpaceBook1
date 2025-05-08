@@ -28,6 +28,7 @@ async function fazerLogin() {
         }
 
         localStorage.setItem('token', data.access_token);
+        localStorage.setItem('usuario', data.usuario); // <- Corrigido aqui
         window.location.href = "perfil.html";
 
     } catch (error) {

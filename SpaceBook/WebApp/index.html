@@ -12,7 +12,7 @@
     <div class="navbar">
       <h1>SpaceBook</h1>
       <nav class="nav-buttons">
-        <a href="leitura.html">Leituras</a>
+        <a href="leituras.html">Leituras</a>
         <a href="favoritos.html">Favoritos</a>
         <a href="chat.html">Chat Interativo</a>
         <a href="login.html">Entrar</a>
@@ -126,6 +126,17 @@
 
     // Adicionar o evento ao botão de busca
     document.querySelector('button[type="submit"]').addEventListener('click', buscarLivros);
+
+    // Evento para o botão "Sair"
+    document.getElementById('logout-link').addEventListener('click', function (e) {
+    e.preventDefault(); // Impede o comportamento padrão do link
+
+    // Exemplo de logout: limpa o token (se usado)
+    localStorage.removeItem('token');
+
+    // Redireciona para a tela de login
+    window.location.href = 'login.html';
+});
 
     // Carregar livros ao iniciar a página
     window.onload = loadBooks;

@@ -1,7 +1,9 @@
 // Função para carregar mensagens de chat
 function carregarChat() {
     const token = localStorage.getItem('token');
-    if (!token) {
+    const usuarioAtual = localStorage.getItem('usuario');
+
+    if (!token || !usuarioAtual) {
         alert("Você precisa estar logado.");
         window.location.href = "login.html";
         return;
@@ -16,10 +18,15 @@ function carregarChat() {
     .then(response => response.json())
     .then(mensagens => {
         const listaChat = document.getElementById('lista-chat');
-        listaChat.innerHTML = '';  // Limpar a lista antes de adicionar novas mensagens
+        listaChat.innerHTML = ''; // Limpar mensagens anteriores
+
         mensagens.forEach(mensagem => {
             const li = document.createElement('li');
-            li.textContent = `${mensagem.usuario}: ${mensagem.texto}`;
+
+            const ehUsuario = mensagem.usuario === usuarioAtual;
+            li.classList.add(ehUsuario ? 'user-message' : 'bot-message');
+            li.textContent = `${ehUsuario ? 'Você' : 'Bot'}: ${mensagem.texto}`;
+
             listaChat.appendChild(li);
         });
     })
@@ -44,8 +51,8 @@ document.getElementById('enviar-mensagem').addEventListener('click', () => {
         })
         .then(response => response.json())
         .then(() => {
-            alert('Mensagem enviada com sucesso!');
-            carregarChat(); // Atualizar a lista
+            document.getElementById('mensagem').value = ''; // Limpa o input
+            carregarChat(); // Recarrega as mensagens
         })
         .catch(error => {
             console.error('Erro ao enviar mensagem:', error);
@@ -54,5 +61,5 @@ document.getElementById('enviar-mensagem').addEventListener('click', () => {
     }
 });
 
-// Chama a função para carregar o chat quando o arquivo JS for carregado
+// Carrega o chat ao iniciar
 carregarChat();

@@ -45,8 +45,10 @@ def login():
 
     user = user_repo.buscar_por_email(email)
     if user and user.verify_password(senha):
-        # Criar token JWT
         access_token = create_access_token(identity=user.id)
-        return jsonify(access_token=access_token), 200
+        return jsonify({
+            "access_token": access_token,
+            "usuario": user.nome  # aqui está o nome retornado
+        }), 200
 
     return jsonify({"message": "Credenciais inválidas"}), 401
