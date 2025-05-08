@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - SpaceBook</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css"> <!-- Caminho corrigido -->
+</head>
+<body>
+    <header>
+        <h1>SpaceBook</h1>
+        <nav>
+            <a href="index.html">Início</a> 
+            <a href="login.html">Login</a>
+            <a href="sair.html">Sair</a> 
+         </nav>
+    </header>
+    
+
+    <main>
+        <div class="form-container">
+            <h2>Cadastrar Usuário</h2>
+            <form id="cadastroForm">
+                <label for="username">Nome</label>
+                <input id="username" type="text" placeholder="Nome" required>
+                
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Email" required>
+                
+                <label for="password">Senha</label>
+                <input id="password" type="password" placeholder="Senha" required>
+                
+                <button type="submit" id="btnCadastrar">Cadastrar</button>
+                <div id="loading-message" class="hidden">
+                    Carregando... <span class="loader"></span>
+                </div>
+                <div id="error-message" class="hidden"></div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SpaceBook - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="js/cadastro.js" defer></script> <!-- Caminho corrigido -->
+</body>
+</html>

@@ -1,0 +1,447 @@
+/* === ESTILOS GERAIS === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9f5ef;
+    color: #4b2e83;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* === CABEÇALHO === */
+header {
+    background: #5c3d99;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 3px solid #a678dd;
+}
+
+header h1 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 2.5rem;
+    margin-right: auto;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+/* === LINKS DO NAV === */
+/* === LINK GERAL DO NAV === */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    white-space: nowrap; /* evita quebra em nomes como "Chat Interativo" */
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #dcd0f3;
+}
+
+/* === CONTAINER DA NAVBAR === */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5c3d99;
+    color: white;
+    padding: 1rem 2rem;
+    border-bottom: 3px solid #a678dd;
+    flex-wrap: wrap; /* torna o menu responsivo em telas menores */
+    gap: 1rem;
+}
+
+/* === LOGO (se houver) pode usar uma classe tipo .navbar-logo === */
+.navbar-logo {
+    font-size: 1.8rem;
+    font-family: 'Pacifico', cursive;
+    margin-right: 2rem;
+}
+
+/* === BOTÕES DO MENU === */
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap; /* melhora em telas menores */
+}
+
+.nav-buttons a {
+    background-color: #8364c2;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.nav-buttons a:hover {
+    background-color: #a678dd;
+}
+
+
+
+/* === CONTEÚDO PRINCIPAL === */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.intro-section {
+    background: #fff8f1;
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.intro-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #5c3d99;
+}
+
+.intro-section h3 {
+    font-size: 1.5rem;
+    color: #4b2e83;
+    margin-top: 1rem;
+}
+
+.intro-section ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.intro-section ul li {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+
+/* === BARRA DE BUSCA === */
+.search-bar {
+    display: flex;
+    flex-wrap: wrap; /* Quebra os itens para telas menores */
+    justify-content: center;
+    align-items: flex-end; /* Alinha o botão na base */
+    gap: 1.5rem;
+    margin-top: 2rem;
+    background-color: #fef7f0;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* leve sombra para destaque */
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Cada campo da barra de busca */
+.search-bar .field-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 220px;
+    flex: 1 1 220px; /* torna responsivo e consistente */
+}
+
+/* Label dos campos */
+.search-bar label {
+    font-size: 0.9rem;
+    color: #4b2e83;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+/* Inputs e select */
+.search-bar input,
+.search-bar select {
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #d6c8e7;
+    background-color: #f3eafd;
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* Botão */
+.search-bar button {
+    padding: 0.9rem 2rem;
+    background-color: #a678dd;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-bar button:hover {
+    background-color: #8f5dc3;
+    transform: scale(1.03);
+}
+
+
+/* === LIVROS === */
+.book-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.book-container .book-card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* === RODAPÉ === */
+footer {
+    background: #eee3d5;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #7a6a5f;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* === LOADER E ERROS === */
+.loader {
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+    font-size: 0;
+    color: transparent;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
+
+.error-message {
+    color: red;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#chat-box {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* === FORMULÁRIOS (LOGIN E CADASTRO) === */
+.form-header {
+    background-color: #5c3d99;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+}
+
+.form-container {
+    max-width: 420px;
+    margin: 3rem auto;
+    background-color: #fef7f0;
+    padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 0.9rem;
+    margin: 1rem 0;
+    border-radius: 12px;
+    border: 1px solid #cdbddc;
+    background-color: #f2e9f7;
+    font-size: 1rem;
+    color: #4b2e83;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container input:focus {
+    border-color: #a678dd;
+    box-shadow: 0 0 5px rgba(166, 120, 221, 0.5);
+    outline: none;
+}
+
+#btnLogin,
+#btnCadastrar {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: #a678dd;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#btnLogin:hover,
+#btnCadastrar:hover {
+    background-color: #8f5dc3;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.form-footer a {
+    color: #8364c2;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+/* === PÁGINA INICIAL === */
+.home-header {
+    background: #5c3d99;
+    color: white;
+    padding: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    border-bottom: 3px solid #a678dd;
+}
+
+.home-main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+}
+
+.home-main h2 {
+    font-size: 2rem;
+    color: #5c3d99;
+}
+
+.home-main p {
+    font-size: 1.2rem;
+    color: #4b2e83;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+.home-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.home-buttons a {
+    background-color: #a678dd;
+    color: white;
+    padding: 0.9rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-buttons a:hover {
+    background-color: #8f5dc3;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .intro-section {
+        padding: 1.5rem;
+    }
+
+    .search-bar {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .book-container {
+        grid-template-columns: 1fr;
+    }
+
+    .book-container .book-card {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .home-main h2 {
+        font-size: 1.5rem;
+    }
+
+    .home-main p {
+        font-size: 1rem;
+    }
+}

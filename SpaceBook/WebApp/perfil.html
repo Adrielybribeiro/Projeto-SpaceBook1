@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - SpaceBook</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Perfil de <span id="nomeUsuario">...</span></h1>
+    <nav>
+      <a href="index.html">Página Inicial</a>
+      <a href="adicionar_livro.html">Adicionar Livro</a>
+      <a href="#" onclick="logout()" role="button" aria-label="Sair da conta">Sair</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <h2>Bem-vindo, <span id="nomeUsuario2">...</span>!</h2>
+      <p>Email: <span id="emailUsuario">...</span></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Catálogo de Livros. Todos os direitos reservados.
+  </footer>
+
+  <script src="js/perfil.js" defer></script>
+</body>
+</html>

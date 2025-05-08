@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chat Interativo - SpaceBook</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header><h1>SpaceBook</h1></head>
+    <main>
+        <h2>Chat Interativo</h2>
+        <section id="chat-box"></section>
+      
+        <input type="text" id="chat-input" placeholder="Escreva aqui..." />
+        <button onclick="sendMessage()">Enviar</button>
+      </main>
+      
+  <script>
+    function sendMessage() {
+      const input = document.getElementById('chat-input');
+      const chat = document.getElementById('chat-box');
+      const msg = input.value;
+      if (msg) {
+        chat.innerHTML += `<p><strong>Você:</strong> ${msg}</p>`;
+        input.value = "";
+        // Aqui você pode integrar com um backend ou IA
+        chat.innerHTML += `<p><strong>Bot:</strong> Em breve recomendarei algo incrível!</p>`;
+      }
+    }
+  </script>
+</body>
+</html>
